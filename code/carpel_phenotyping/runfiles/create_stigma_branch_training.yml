@@ -1,0 +1,13 @@
+---
+
+output_base_uri: scratch
+output_name: stigma_branch_training
+input_datasets:
+  - uri: /Users/example/data/training_set_1
+    templates: 
+      - "image_{n:d}_branch1.roi"
+      - "image_{n:d}_branch2.roi"
+  - uri: /Users/example/data/training_set_2
+    templates:
+      - "image_{n:d}_branch1.roi"
+      - "image_{n:d}_branch2.roi"

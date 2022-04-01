@@ -1,0 +1,6 @@
+---
+input_dirpath:  /Users/example/data/images_to_measure
+model_uri: /Users/example/models/stigma-area-unet-full
+output_base_uri: scratch
+output_name: example
+pixels_per_mm: 143

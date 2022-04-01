@@ -1,0 +1,7 @@
+---
+
+output_base_uri: scratch
+output_name: ovary_area_training
+input_datasets:
+  - uri: /Users/example/data/training
+    template: "image_{n:d}_ovary.roi"
