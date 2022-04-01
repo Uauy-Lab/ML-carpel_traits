@@ -1,0 +1,12 @@
+source_dataset_name: ovary_area_training_sep_2020
+source_dataset_uri: file://j384n1/hpc-home/hartleym/datasets/ovary_area_training_sep_2020
+source_dataset_uuid: 21bafd33-df9c-4198-9b90-755042257d59
+parameters:
+  batch_size: 4
+  learning_rate: 0.01
+  n_epochs: 300
+  input_dim: (512, 512)
+  input_channels: 3
+  optimiser_name: Adam
+  loss_func: function
+model_name: SimpleUNet

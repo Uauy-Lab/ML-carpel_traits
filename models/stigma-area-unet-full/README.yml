@@ -1,0 +1,10 @@
+source_dataset_name: full_im_masks
+source_dataset_uri: file://j384n1/hpc-home/hartleym/datasets/full_im_masks
+source_dataset_uuid: e687c091-98fc-463e-961c-a383420edf3d
+parameters:
+  batch_size: 4
+  learning_rate: 0.01
+  n_epochs: 200
+  optimiser_name: Adam
+  loss_func: function
+model_name: SimpleUNet

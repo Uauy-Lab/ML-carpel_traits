@@ -1,0 +1,12 @@
+{
+  "batch_size": 4,
+  "learning_rate": 0.01,
+  "n_epochs": 300,
+  "input_dim": [
+    512,
+    512
+  ],
+  "input_channels": 3,
+  "optimiser_name": "Adam",
+  "loss_func": "function"
+}
