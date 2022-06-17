@@ -1,0 +1,7 @@
+---
+input_dirpath: input_folder_carpel
+ovary_model_uri: models/ovary-area-unet-full
+stigma_model_uri: models/stigma-area-unet-full
+output_base_uri: results_stigma
+output_name: output_folder_annotated_stigma
+working_dirpath: working_stigma
