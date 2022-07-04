@@ -36,14 +36,14 @@ i <- 1
 
 for (i in 1:v){
   
-  unfiltered_data$days_to_GS59[i] <- gsub("[A-Z]", "", unfiltered_data$tp[i]) 
+  unfiltered_data$days_to_GS59[i] <- gsub("[A-Z]", "", unfiltered_data$tp[i]) # example 3 DAH to 3 so that we can do 11/06/2020 - 3 in the next step
   unfiltered_data$heading <- as.Date(unfiltered_data$date) - as.numeric(unfiltered_data$days_to_GS59)
 }
 
 head(unfiltered_data)
 
 
-#read temperature from data loggers
+#read temperature from data logger
 temp <- read.table("temp.csv", sep = ",", header = TRUE, stringsAsFactors = FALSE)
 
 temp_only <- temp[,c("Time", "Date", "Temperature_oC")] 
@@ -57,7 +57,7 @@ daily_mean <-daily_mean[order(as.Date(daily_mean$Date, format="%d/%m/%Y")), ]
 daily_mean$Date <- as.Date(daily_mean$Date, format="%d/%m/%Y")
 str(daily_mean)
 
-#calculate cumulative degree days
+#calculate cumulative degree days from Waddington 9.5 (~ heading or gorwth stage (GS) 59) to sampling date. Refer to materials and methods for the equation used.
 
 v <- length(unfiltered_data$id)
 i <- 1
@@ -75,6 +75,7 @@ for (i in 1:v){
 head(unfiltered_data)
 
 # 1. REMOVE OUTLIERS WITHIN THE SPIKES #
+# depending on the amount of variation you have, you could skip this step if not relevant.
 
 #create unique identifier for spike samples
 unfiltered_data$new_id_1 <- paste(unfiltered_data$id, unfiltered_data$tp,unfiltered_data$plot,unfiltered_data$spike,sep='_')
@@ -131,6 +132,7 @@ min(check1$N)  ## data 2019-20 because of pollen contamination in some cases I c
                ## data 2020-21 is all ok                  
 
 # 2. REMOVE OUTLIERS BETWEEN SPIKES FOR EACH TIME POINT #
+# again, depending on the amount of variation you have, you could skip this step if not relevant.
 
 #create unique identifier for spike samples
 filtered_data_1$new_id_2 <- paste(filtered_data_1$id, filtered_data_1$tp, sep='_')
